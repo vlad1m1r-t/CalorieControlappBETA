@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.info {
+	width: 68%;
+	margin: auto;
+}
+
+img.right {
+    max-width: 300px;
+	height: auto;
+	float: left;
+}
+
+.name-text {
+    width: 50%;
+	margin: auto
+}
+
+.bioinfo {
+    width: 50%;
+	margin: auto;
+}
+
+
+
+footer.my-own {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+

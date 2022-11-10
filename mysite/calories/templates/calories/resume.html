@@ -1,0 +1,12 @@
+{% extends 'calories/base.html' %}
+
+{% block content %}
+{% for b in Biograph %}
+
+{% if b.photo %}
+<p><img class="right" src="{{b.photo.url}}"></p>
+{% endif %}
+<h1 class="name-text">{{b.Name}}</h1>
+<h4 class="bioinfo">{{b.bioinfo}}</h4>
+{% endfor %}
+{% endblock %}

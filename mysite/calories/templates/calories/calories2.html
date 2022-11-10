@@ -1,0 +1,40 @@
+{% extends 'calories/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<p> Ваша суточная норма калорий: {{ allowance }} ккал</p>
+{% if get_info_all_caldj is not None %}
+<p> Вы сегодня съели: {{ get_info_all_caldj }} ккал</p><br>
+{% else %}
+<p> Вы сегодня съели: 0 ккал</p><br>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+<button type="submit" class="btn btn-success">Добавить</button><br><br>
+
+ <table width="80%">
+     <tr>
+        <th>Продукт</th>
+        <th>Количество</th>
+        <th>Калории</th>
+        <th>Белки</th>
+        <th>Жиры</th>
+        <th>Углеводы</th>
+        <th>Дата</th>
+    </tr>
+     {% for j in get_info %}
+    <tr>
+        <td>{{j.nameProduct}}</td>
+        <td>{{j.amount}}</td>
+        <td>{{j.caldj}}</td>
+        <td>{{j.protein}}</td>
+        <td>{{j.fat}}</td>
+        <td>{{j.carbohydrates}}</td>
+        <td>{{j.time_create}}</td>
+    </tr>
+     {% endfor %}
+ </table>
+
+</form>
+{% endblock %}
