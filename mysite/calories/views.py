@@ -3,9 +3,18 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.models import Sum
 from django.shortcuts import render, redirect
+from rest_framework import generics
+
 from calories.forms import CreateUserForm, DataUser, AddFood
 from .models import *
 import datetime
+
+from .serializers import CaloriesSerializer
+
+
+class CaloriesAPIView(generics.ListAPIView):
+    queryset = Visitor.objects.all()
+    serializer_class = CaloriesSerializer
 
 def index(requests):
     username = requests.user.username

@@ -1,5 +1,4 @@
 Django==4.1.1
-setuptool==60.2.0
 pip==22.2.2
 Pillow==9.2.0
 asgiref==3.5.2
@@ -7,3 +6,4 @@ psycopg2-binary==2.9.5
 wheel==0.37.1
 sqlparse==0.4.2
 include==0.2.2
+djangorestframework==3.14.0

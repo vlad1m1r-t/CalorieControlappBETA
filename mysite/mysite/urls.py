@@ -23,4 +23,5 @@ from calories.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('calories.urls')),
+    path('api/v1/calorieslist/', CaloriesAPIView.as_view())
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
